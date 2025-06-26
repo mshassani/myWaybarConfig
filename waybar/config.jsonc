@@ -1,0 +1,143 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/currentweather", "custom/weather", "clock"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["pulseaudio", "network", "bluetooth","cpu", "memory", "temperature", "battery", "tray"],
+    
+    "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-connected": " {device_alias}",
+    "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+    "tooltip-format": " {controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": " {controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "interval": 30,
+    "on-click": "blueman-manager"
+     },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    
+    "clock": {
+        "interval": 1,
+        "format": "{:%I:%M %p  %A, %b %d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 5,
+        "tooltip": false
+    },
+    
+    "memory": {
+        "format": " {}%",
+        "interval": 5,
+        "tooltip": false
+    },
+    
+    "temperature": {
+        "thermal-zone": 0,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "format-critical": " {temperatureC}°C",
+        "interval": 5
+    },
+    
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 10
+    },
+    
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " Disconnected",
+        "interval": 5,
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol"
+    },
+    
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    },
+    
+    "custom/launcher": {
+        "format": "",
+        "on-click": "bash /home/sadra/.config/waybar/c_center.sh",
+        "tooltip": false
+    },
+    
+    "custom/currentweather": {
+        "exec": "curl -s 'wttr.in/?format=1'",
+        "interval": 3600,
+        "return-type": "json"
+    },
+    
+    "custom/weather": {
+        "exec": "curl -s 'wttr.in/?format=%c+%t+%h'",
+        "tooltip": true,
+        "interval": 3600
+    },
+
+    "custom/music": {
+    "format": "{text}",
+    "exec": "~/.config/waybar/music_status.sh",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "interval": 1
+}
+
+
+}

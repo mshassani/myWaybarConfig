@@ -1,0 +1,118 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #eceff4;
+}
+
+#workspaces button {
+    background: transparent;
+    color: #eceff4;
+    padding: 6px 12px;
+    border-radius: 14px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, rgba(203, 166, 247, 0.3), rgba(148, 226, 213, 0.3));
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: rgba(255, 95, 95, 0.5);
+    color: #fff;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-launcher,
+#custom-currentweather,
+#custom-weather,
+#tray,
+#custom-music {
+    background-color: rgba(24, 24, 27, 0.4);
+    color: #eceff4;
+    border-radius: 14px;
+    padding: 6px 12px;
+    margin: 4px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#custom-music:hover,
+#battery:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+#custom-music.playing {
+    background: linear-gradient(
+      135deg,
+      rgba(203, 166, 247, 0.25),
+      rgba(148, 226, 213, 0.25)
+    );
+}
+
+tooltip {
+    background-color: rgba(24, 24, 27, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #eceff4;
+}
+
+tooltip label {
+    color: #eceff4;
+}
+
+@keyframes blink {
+    0% { background-color: rgba(203, 166, 247, 0.25); }
+    50% { background-color: rgba(203, 166, 247, 0.5); }
+    100% { background-color: rgba(203, 166, 247, 0.25); }
+}
+
+#custom-music.playing {
+    animation: blink 1.5s infinite;
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#custom-music.paused {
+    background-color: rgba(24, 24, 27, 0.4);
+    color: #cba6f7;
+    border-radius: 14px;
+    padding: 6px 12px;
+    margin: 0 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#custom-music.stopped {
+    background: transparent;
+    color: #6c6f93;
+    padding: 6px 12px;
+    margin: 0 6px;
+}
