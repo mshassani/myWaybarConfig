@@ -1,0 +1,102 @@
+
+QWidget {
+    background-color: rgba(0, 0, 0, 0); 
+    border-radius: 15px;
+    color: white;
+    font-family: "Sans";
+    font-size: 14px;
+}
+
+
+QPushButton {
+    background-color: rgba(30, 30, 30, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: rgba(50, 50, 50, 0.7);
+}
+
+QPushButton:pressed {
+    background-color: rgba(70, 70, 70, 0.8);
+}
+
+
+QRadioButton {
+    color: white;
+    spacing: 5px;
+}
+
+QRadioButton::indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(30, 30, 30, 0.6);
+}
+
+QRadioButton::indicator:checked {
+    background-color: rgba(255, 153, 0, 0.9);
+    border: 2px solid rgba(255, 153, 0, 1);
+}
+
+
+QLabel {
+    color: white;
+    font-weight: bold;
+}
+
+QGroupBox {
+    background-color: rgba(30, 30, 30, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 5px;
+    color: white;
+    font-weight: bold;
+}
+
+
+QFrame#backgroundFrame {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+
+QFrame {
+    background-color: transparent;
+}
+
+QToolTip {
+    background-color: rgba(50, 50, 50, 0.8);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(255, 255, 255, 0.4);
+    min-height: 20px;
+    border-radius: 4px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
